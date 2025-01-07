@@ -1,0 +1,37 @@
+-
+    type: content_type
+    mode: update
+    match:
+        field: content_type_identifier
+        value: dashboard_landing_page
+    actions:
+        -
+            action: add_block_to_available_blocks
+            fieldDefinitionIdentifier: dashboard
+            blocks:
+                - ibexa_activity_log_list
+
+-
+    type: content
+    mode: update
+    match:
+        field: content_remote_id
+        value: default_dashboard_landing_page
+    actions:
+        -
+            action: ibexa.landing_page.put_block_onto_page
+            fieldDefinitionIdentifier: dashboard
+            zones:
+                - name: 'middle-left'
+                  blocks:
+                      - id: 'b-1e99e97a-a0e3-44a7-87b9-27792372c80c'
+                        type: ibexa_activity_log_list
+                        name: 'Recent activity'
+                        view: activity_log_list
+                        attributes:
+                            - id: 'a-87d069a3-654c-400b-930e-36bd6367214b'
+                              name: show_only_current_user
+                              value: '0'
+                            - id: 'a-a03ee573-b84f-4edd-b85f-6e5b398797b5'
+                              name: limit
+                              value: 5

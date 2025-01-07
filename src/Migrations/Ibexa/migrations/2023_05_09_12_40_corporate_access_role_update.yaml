@@ -1,0 +1,53 @@
+-   type: role
+    mode: update
+    match:
+        field: identifier
+        value: 'Corporate Access'
+    policies:
+        mode: append
+        list:
+            -
+                module: user
+                function: login
+                limitations:
+                    -
+                        identifier: SiteAccess
+                        values: [ site ]
+            -
+                module: content
+                function: read
+                limitations:
+                    -
+                        identifier: Section
+                        values: [ standard, media, form ]
+            -
+                module: content
+                function: view_embed
+                limitations:
+                    -
+                        identifier: Class
+                        values: [ image, file ]
+            -
+                module: content
+                function: read
+                limitations:
+                    -   identifier: Section
+                        values: [ taxonomy ]
+            -
+                module: taxonomy
+                function: read
+                limitations:
+                    -   identifier: Taxonomy
+                        values: [ tags ]
+            -
+                module: content
+                function: read
+                limitations:
+                    -   identifier: Section
+                        values: [ product_taxonomy]
+            -
+                module: taxonomy
+                function: read
+                limitations:
+                    -   identifier: Taxonomy
+                        values: [ product_categories ]

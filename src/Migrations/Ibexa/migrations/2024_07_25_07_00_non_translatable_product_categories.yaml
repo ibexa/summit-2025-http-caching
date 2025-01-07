@@ -1,0 +1,19 @@
+-   type: content_type
+    mode: update
+    match:
+        field: content_type_identifier
+        value: product_category_tag
+    fields:
+        -   identifier: identifier
+            type: ezstring
+            position: 20
+            translations: { eng-GB: { name: 'Identifier' } }
+            required: true
+            translatable: false
+        -   identifier: parent
+            type: ibexa_taxonomy_entry
+            position: 30
+            translations: { eng-GB: { name: 'Parent Category' } }
+            required: false
+            fieldSettings: { taxonomy: product_categories }
+            translatable: false

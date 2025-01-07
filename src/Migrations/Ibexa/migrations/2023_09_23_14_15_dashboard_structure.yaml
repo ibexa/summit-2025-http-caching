@@ -1,0 +1,249 @@
+-   type: section
+    mode: create
+    metadata:
+        identifier: dashboard
+        name: Dashboard
+
+-
+    type: content_type_group
+    mode: create
+    metadata:
+        identifier: Dashboard
+        isSystem: true
+    references:
+        -
+            name: ref__Dashboard__content_type_group_id
+            type: content_type_group_id
+
+-
+    type: content_type
+    mode: create
+    metadata:
+        identifier: dashboard_landing_page
+        mainTranslation: eng-GB
+        urlAliasSchema: ''
+        nameSchema: '<name>'
+        container: false
+        defaultAlwaysAvailable: true
+        defaultSortField: !php/const Ibexa\Contracts\Core\Repository\Values\Content\Location::SORT_FIELD_NAME
+        defaultSortOrder: 0
+        contentTypeGroups:
+            - Dashboard
+        translations:
+            eng-GB:
+                name: Dashboard
+                description: 'Customizable Dashboard'
+    fields:
+        -
+            identifier: name
+            type: ezstring
+            position: 0
+            translations:
+                eng-GB:
+                    name: 'Dashboard name'
+                    description: ''
+            required: true
+            searchable: false
+            infoCollector: false
+            translatable: true
+            category: content
+            defaultValue: null
+            fieldSettings: {  }
+            validatorConfiguration:
+                StringLengthValidator:
+                    maxStringLength: null
+                    minStringLength: null
+        -
+            identifier: dashboard
+            type: ezlandingpage
+            position: 1
+            translations:
+                eng-GB:
+                    name: 'Dashboard page'
+                    description: ''
+            required: true
+            searchable: false
+            infoCollector: false
+            translatable: false
+            category: content
+            defaultValue:
+                layout: dashboard_one_column
+                zones:
+                    - { id: default_id, name: default, blocks: {  } }
+            fieldSettings:
+                availableBlocks:
+                    - ibexa_news
+                    - my_content
+                    - common_content
+                    - review_queue
+                    - quick_actions
+                availableLayouts:
+                    - dashboard_one_column
+                    - dashboard_two_columns
+                    - dashboard_one_third_left
+                    - dashboard_one_third_right
+                    - dashboard_two_rows_two_columns
+                    - dashboard_three_rows_two_columns
+                    - dashboard_three_rows_two_columns_2
+                    - dashboard_three_columns
+                    - dashboard_two_rows_three_columns
+                    - dashboard_three_rows_three_columns
+                    - dashboard_three_rows_three_columns_2
+                editorMode: page_view_mode
+            validatorConfiguration: {  }
+    references:
+        -
+            name: ref__dashboard_landing_page__content_type_id
+            type: content_type_id
+
+-   type: content
+    mode: create
+    metadata:
+        contentType: folder
+        alwaysAvailable: true
+        mainTranslation: eng-GB
+        remoteId: dashboard_container_folder
+        section:
+            identifier: dashboard
+    location:
+        parentLocationId: 1
+        locationRemoteId: dashboard_container
+        hidden: false
+        sortField: !php/const Ibexa\Contracts\Core\Repository\Values\Content\Location::SORT_FIELD_NAME
+        sortOrder: ASC
+        priority: 0
+    fields:
+        -   fieldDefIdentifier: name
+            fieldTypeIdentifier: ezstring
+            languageCode: eng-GB
+            value: 'Dashboards'
+            searchable: false
+    references:
+        -   name: ref__dashboard__container_folder__location_id
+            type: location_id
+        -   name: ref__dashboard__container_folder__content_id
+            type: content_id
+
+-   type: content
+    mode: create
+    metadata:
+        contentType: folder
+        alwaysAvailable: true
+        mainTranslation: eng-GB
+        remoteId: predefined_dashboards_folder
+        section:
+            identifier: dashboard
+    location:
+        parentLocationId: 'reference:ref__dashboard__container_folder__location_id'
+        locationRemoteId: predefined_dashboards
+        hidden: false
+        sortField: !php/const Ibexa\Contracts\Core\Repository\Values\Content\Location::SORT_FIELD_NAME
+        sortOrder: ASC
+        priority: 0
+    fields:
+        -   fieldDefIdentifier: name
+            fieldTypeIdentifier: ezstring
+            languageCode: eng-GB
+            value: 'Predefined dashboards'
+            searchable: false
+    references:
+        -   name: ref__predefined_dashboards_folder__location_id
+            type: location_id
+        -   name: ref__predefined_dashboards_folder__path
+            type: path
+        -   name: ref__predefined_dashboards_folder__content_id
+            type: content_id
+
+-
+    type: content
+    mode: create
+    metadata:
+        contentType: dashboard_landing_page
+        mainTranslation: eng-GB
+        remoteId: default_dashboard_landing_page
+        alwaysAvailable: true
+        section:
+            identifier: dashboard
+    location:
+        parentLocationId: 'reference:ref__predefined_dashboards_folder__location_id'
+        locationRemoteId: default_dashboard
+        hidden: false
+        sortField: null
+        sortOrder: null
+        priority: null
+    fields:
+        -
+            fieldDefIdentifier: name
+            languageCode: eng-GB
+            value: Default dashboard
+            searchable: false
+        -
+            fieldDefIdentifier: dashboard
+            languageCode: eng-GB
+            value:
+                layout: dashboard_three_rows_two_columns
+                zones:
+                    -
+                        id: 'e77d621e-9238-46bd-bba6-e5f1aed464f4'
+                        name: top
+                        blocks: [{ visible: true, id: 'b-27e23e7e-dc4c-4a46-a2c9-6f8a8a7aa164', type: quick_actions, name: 'Quick actions', view: default, compiled: '', attributes: { } }]
+                    -
+                        id: 'ab50e005-eba0-4d73-88ca-dab96ed83d0a'
+                        name: middle-left
+                        blocks: [ ]
+                    -
+                        id: '8270738a-0360-42bb-aa4b-2104a634efab'
+                        name: middle-right
+                        blocks: [{ visible: true, id: 'b-4cb58721-aec2-97da-bc43-5d80fcf2ac33', type: ibexa_news, name: 'Ibexa news', view: default, compiled: '', attributes: { } }]
+                    -
+                        id: '320e44a6-80af-4ca0-a2f1-f095a8a9abe8'
+                        name: bottom
+                        blocks: 
+                            - { visible: true, id: 'b-8f0fc107-32a5-4c5e-97dd-fc4e2aa89a80', type: review_queue, name: 'Review queue', view: default, compiled: '', attributes: { } }
+                            - { visible: true, id: 'b-721b5ac3-2639-4b45-ae81-0fc37a9f2a58', type: my_content, name: 'My content', view: default, compiled: '', attributes: { } }
+                            - { visible: true, id: 'b-ea03824c-ecb6-4f13-93f8-7958a60fa620', type: common_content, name: 'Common content', view: default, compiled: '', attributes: { } }
+
+    references:
+        -
+            name: ref__dashboard__default_dashboard__content_id
+            type: content_id
+        -
+            name: ref__dashboard__default_dashboard__location_id
+            type: location_id
+        -
+            name: ref__dashboard__default_dashboard__path
+            type: path
+
+-   type: content
+    mode: create
+    metadata:
+        contentType: folder
+        alwaysAvailable: true
+        mainTranslation: eng-GB
+        remoteId: user_dashboards_folder
+        section:
+            identifier: dashboard
+    location:
+        parentLocationId: 'reference:ref__dashboard__container_folder__location_id'
+        locationRemoteId: user_dashboards
+        hidden: false
+        sortField: !php/const Ibexa\Contracts\Core\Repository\Values\Content\Location::SORT_FIELD_NAME
+        sortOrder: ASC
+        priority: 0
+    fields:
+        -   fieldDefIdentifier: name
+            fieldTypeIdentifier: ezstring
+            languageCode: eng-GB
+            value: 'User dashboards'
+            searchable: false
+    references:
+        -   name: ref__user_dashboards_folder__location_id
+            type: location_id
+        -   name: ref__user_dashboards_folder__path
+            type: path
+        -   name: ref__user_dashboards_folder__content_id
+            type: content_id
+
+-   type: reference
+    mode: save
+    filename: references/dashboard_references.yaml

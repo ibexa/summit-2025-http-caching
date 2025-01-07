@@ -1,0 +1,88 @@
+
+-
+    name: taxonomy_folder_location_id
+    value: 57
+
+-
+    name: taxonomy_tag_folder_location_id
+    value: 58
+
+-
+    name: ref__product_catalog_root
+    value: 60
+
+-
+    name: ref__corporate_account__sales_reps_user_group__location_id
+    value: 64
+
+-
+    name: ref__corporate_account__sales_reps_user_group__content_id
+    value: 63
+
+-
+    name: ref__corporate_account__content_id
+    value: 64
+
+-
+    name: ref__role__company_admin__role_id
+    value: 14
+
+-
+    name: ref__role__company_buyer__role_id
+    value: 15
+
+-
+    name: ref_content_id__corporate_account_applications_folder
+    value: 65
+
+-
+    name: ref_location_id__corporate_account_applications_folder
+    value: 66
+
+-
+    name: ref_path__corporate_account_applications_folder
+    value: /1/66/
+
+-
+    name: ref__dashboard__container_folder__location_id
+    value: 67
+
+-
+    name: ref__dashboard__container_folder__content_id
+    value: 66
+
+-
+    name: ref__predefined_dashboards_folder__location_id
+    value: 68
+
+-
+    name: ref__predefined_dashboards_folder__path
+    value: /1/67/68/
+
+-
+    name: ref__predefined_dashboards_folder__content_id
+    value: 67
+
+-
+    name: ref__dashboard__default_dashboard__content_id
+    value: 68
+
+-
+    name: ref__dashboard__default_dashboard__location_id
+    value: 69
+
+-
+    name: ref__dashboard__default_dashboard__path
+    value: /1/67/68/69/
+
+-
+    name: ref__user_dashboards_folder__location_id
+    value: 70
+
+-
+    name: ref__user_dashboards_folder__path
+    value: /1/67/70/
+
+-
+    name: ref__user_dashboards_folder__content_id
+    value: 69

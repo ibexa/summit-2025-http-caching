@@ -1,0 +1,117 @@
+-   type: reference
+    mode: load
+    filename: references/corporate_account_references.yml
+
+-   type: content_type_group
+    mode: create
+    metadata:
+        identifier: Customer Portal
+        isSystem: false
+    references:
+        -   name: ref__corporate_account__customer_portal_content_type_group_id
+            type: content_type_group_id
+
+-   type: content_type
+    mode: create
+    metadata:
+        identifier: customer_portal_page
+        contentTypeGroups:
+            - Customer Portal
+        mainTranslation: eng-GB
+        nameSchema: '<name>'
+        container: false
+        remoteId: null
+        translations:
+            eng-GB:
+                name: Customer Portal Page
+    fields:
+        -   identifier: name
+            type: ezstring
+            position: 1
+            translations:
+                eng-GB:
+                    name: 'Name'
+                    description: ''
+            required: true
+            searchable: true
+            infoCollector: false
+            translatable: false
+            category: ''
+            defaultValue: ''
+            fieldSettings: { }
+            validatorConfiguration:
+                StringLengthValidator:
+                    maxStringLength: null
+                    minStringLength: null
+        -   identifier: description
+            type: ezstring
+            position: 2
+            translations:
+                eng-GB:
+                    name: 'Description'
+                    description: ''
+            required: true
+            searchable: true
+            infoCollector: false
+            translatable: false
+            category: ''
+            defaultValue: ''
+            fieldSettings: { }
+            validatorConfiguration:
+                StringLengthValidator:
+                    maxStringLength: null
+                    minStringLength: null
+        -   identifier: page
+            type: ezlandingpage
+            position: 3
+            translations:
+                eng-GB:
+                    name: 'Customer Portal'
+                    description: ''
+            required: true
+            searchable: false
+            infoCollector: false
+            translatable: true
+            category: ''
+            defaultValue:
+                layout: default
+                zones:
+                    - { id: default_id, name: default, blocks: {  } }
+            fieldSettings:
+                availableBlocks: null
+                availableLayouts: null
+                editorMode: page_view_mode
+            validatorConfiguration: {  }
+
+-   type: content_type
+    mode: create
+    metadata:
+        identifier: customer_portal
+        contentTypeGroups:
+            - Customer Portal
+        mainTranslation: eng-GB
+        nameSchema: '<name>'
+        container: true
+        remoteId: null
+        translations:
+            eng-GB:
+                name: Customer Portal
+    fields:
+        -   identifier: name
+            type: ezstring
+            position: 1
+            translations:
+                eng-GB:
+                    name: 'Name'
+                    description: ''
+            required: true
+            searchable: true
+            infoCollector: false
+            translatable: false
+            category: ''
+            defaultValue: ''
+            fieldSettings: { }
+            validatorConfiguration:
+                StringLengthValidator:
+                    maxStringLength: null
+                    minStringLength: null

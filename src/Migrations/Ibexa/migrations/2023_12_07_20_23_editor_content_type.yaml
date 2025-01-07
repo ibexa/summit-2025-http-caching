@@ -1,0 +1,225 @@
+-
+    type: content_type
+    mode: create
+    metadata:
+        identifier: editor
+        mainTranslation: eng-GB
+        creatorId: 14
+        creationDate: '2023-12-03T11:43:13+01:00'
+        remoteId: 65730554a57aca85ee891125c432aa59
+        urlAliasSchema: ''
+        nameSchema: '<first_name> <last_name>'
+        container: false
+        defaultAlwaysAvailable: true
+        defaultSortField: 1
+        defaultSortOrder: 1
+        contentTypeGroups:
+            - Users
+        translations:
+            eng-GB:
+                name: Editor
+                description: ''
+    fields:
+        -
+            identifier: first_name
+            type: ezstring
+            position: 0
+            translations:
+                eng-GB:
+                    name: 'First name'
+                    description: ''
+            required: true
+            searchable: true
+            infoCollector: false
+            translatable: true
+            category: content
+            defaultValue: null
+            fieldSettings: {  }
+            validatorConfiguration:
+                StringLengthValidator:
+                    maxStringLength: 255
+                    minStringLength: null
+        -
+            identifier: last_name
+            type: ezstring
+            position: 1
+            translations:
+                eng-GB:
+                    name: 'Last name'
+                    description: ''
+            required: true
+            searchable: true
+            infoCollector: false
+            translatable: true
+            category: content
+            defaultValue: null
+            fieldSettings: {  }
+            validatorConfiguration:
+                StringLengthValidator:
+                    maxStringLength: 255
+                    minStringLength: null
+        -
+            identifier: user_account
+            type: ezuser
+            position: 2
+            translations:
+                eng-GB:
+                    name: 'User account'
+                    description: ''
+            required: true
+            searchable: false
+            infoCollector: false
+            translatable: false
+            category: content
+            defaultValue: null
+            fieldSettings:
+                PasswordTTL: 0
+                PasswordTTLWarning: 0
+                RequireUniqueEmail: false
+                UsernamePattern: '^[^@]+$'
+            validatorConfiguration:
+                PasswordValueValidator:
+                    requireAtLeastOneUpperCaseCharacter: true
+                    requireAtLeastOneLowerCaseCharacter: true
+                    requireAtLeastOneNumericCharacter: true
+                    requireAtLeastOneNonAlphanumericCharacter: false
+                    requireNewPassword: false
+                    requireNotCompromisedPassword: false
+                    minLength: 10
+        -
+            identifier: image
+            type: ezimage
+            position: 3
+            translations:
+                eng-GB:
+                    name: Image
+                    description: ''
+            required: false
+            searchable: false
+            infoCollector: false
+            translatable: true
+            category: content
+            defaultValue: null
+            fieldSettings: {  }
+            validatorConfiguration:
+                FileSizeValidator:
+                    maxFileSize: null
+                AlternativeTextValidator:
+                    required: false
+            thumbnail: true
+        -
+            identifier: signature
+            type: eztext
+            position: 4
+            translations:
+                eng-GB:
+                    name: Signature
+                    description: ''
+            required: false
+            searchable: true
+            infoCollector: false
+            translatable: true
+            category: content
+            defaultValue: null
+            fieldSettings:
+                textRows: 10
+            validatorConfiguration: {  }
+        -
+            identifier: position
+            type: ezstring
+            position: 5
+            translations:
+                eng-GB:
+                    name: 'Job Title'
+                    description: ''
+            required: false
+            searchable: true
+            infoCollector: false
+            translatable: false
+            category: about
+            defaultValue: null
+            fieldSettings: {  }
+            validatorConfiguration:
+                StringLengthValidator:
+                    maxStringLength: null
+                    minStringLength: null
+        -
+            identifier: department
+            type: ezstring
+            position: 6
+            translations:
+                eng-GB:
+                    name: Department
+                    description: ''
+            required: false
+            searchable: true
+            infoCollector: false
+            translatable: false
+            category: about
+            defaultValue: null
+            fieldSettings: {  }
+            validatorConfiguration:
+                StringLengthValidator:
+                    maxStringLength: null
+                    minStringLength: null
+        -
+            identifier: location
+            type: ezstring
+            position: 7
+            translations:
+                eng-GB:
+                    name: Location
+                    description: ''
+            required: false
+            searchable: true
+            infoCollector: false
+            translatable: false
+            category: about
+            defaultValue: null
+            fieldSettings: {  }
+            validatorConfiguration:
+                StringLengthValidator:
+                    maxStringLength: null
+                    minStringLength: null
+        -
+            identifier: phone
+            type: ezstring
+            position: 8
+            translations:
+                eng-GB:
+                    name: Phone
+                    description: ''
+            required: false
+            searchable: true
+            infoCollector: false
+            translatable: true
+            category: contact
+            defaultValue: null
+            fieldSettings: {  }
+            validatorConfiguration:
+                StringLengthValidator:
+                    maxStringLength: null
+                    minStringLength: null
+        -
+            identifier: linked_in
+            type: ezstring
+            position: 9
+            translations:
+                eng-GB:
+                    name: LinkedIn
+                    description: ''
+            required: false
+            searchable: true
+            infoCollector: false
+            translatable: true
+            category: contact
+            defaultValue: null
+            fieldSettings: {  }
+            validatorConfiguration:
+                StringLengthValidator:
+                    maxStringLength: null
+                    minStringLength: null
+    references:
+        -
+            name: ref__editor__content_type_id
+            type: content_type_id

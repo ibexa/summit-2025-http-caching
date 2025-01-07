@@ -1,0 +1,44 @@
+-   type: reference
+    mode: load
+    filename: references/corporate_account_references.yml
+
+-   type: content_type
+    mode: update
+    match:
+        field: content_type_identifier
+        value: corporate_account_application
+    fields:
+        -   identifier: customer_group
+            type: ibexa_customer_group
+            position: 15
+            translations:
+                eng-GB:
+                    name: 'Customer group'
+                    description: ''
+            required: false
+            searchable: false
+            infoCollector: false
+            translatable: false
+            category: 'internal'
+            defaultValue: ''
+            fieldSettings: { }
+            validatorConfiguration: { }
+        -   identifier: sales_rep
+            type: ezobjectrelation
+            position: 16
+            translations:
+                eng-GB:
+                    name: 'Sales representative'
+                    description: ''
+            required: false
+            searchable: true
+            infoCollector: false
+            translatable: false
+            category: 'internal'
+            defaultValue: ''
+            fieldSettings:
+                selectionMethod: 0
+                selectionRoot: 'reference:ref__corporate_account__sales_reps_user_group__location_id'
+                selectionContentTypes:
+                    - user
+                rootDefaultLocation: false

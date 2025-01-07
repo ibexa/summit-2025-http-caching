@@ -1,0 +1,9 @@
+version: '3.3'
+# Configuration for Lambdatest
+
+services:
+  app:
+    environment:
+     - LAMBDATEST_PROJECT_TOKEN
+     - LAMBDATEST_USERNAME
+     - LAMBDATEST_ACCESS_KEY

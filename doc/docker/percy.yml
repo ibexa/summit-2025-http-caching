@@ -1,0 +1,20 @@
+version: '3.3'
+# Image for Percy 
+
+services:
+  percy:
+    image: node:lts-alpine3.15
+    ports:
+     - "5338:5338"
+    environment:
+     - PERCY_TOKEN
+     - PERCY_BRANCH
+    networks:
+     - backend
+    command: /bin/sh -c 'npm install -g @percy/cli && apk add chromium && PERCY_BROWSER_EXECUTABLE="/usr/bin/chromium-browser" npx percy exec:start'
+
+  app:
+    depends_on:
+     - percy
+    environment:
+     - PERCY_BASE_URL=http://percy:5338

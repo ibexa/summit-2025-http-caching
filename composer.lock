@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d995836ce00d457b5153e6f310000138",
+    "content-hash": "eea0b02980383d983c5971c9be8422a2",
     "packages": [
         {
             "name": "babdev/pagerfanta-bundle",
@@ -4634,6 +4634,36 @@
                 "source": "https://github.com/ibexa/design-engine/tree/v4.6.15"
             },
             "time": "2024-12-13T13:37:32+00:00"
+        },
+        {
+            "name": "ibexa/docker",
+            "version": "v4.6.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibexa/docker.git",
+                "reference": "cc24f6e153ab90ae87a9f96f19df7d325e2d2896"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibexa/docker/zipball/cc24f6e153ab90ae87a9f96f19df7d325e2d2896",
+                "reference": "cc24f6e153ab90ae87a9f96f19df7d325e2d2896",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "4.6.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "description": "Docker files for Ibexa DXP",
+            "support": {
+                "source": "https://github.com/ibexa/docker/tree/v4.6.15"
+            },
+            "time": "2024-12-13T13:39:37+00:00"
         },
         {
             "name": "ibexa/doctrine-schema",

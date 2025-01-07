@@ -22,6 +22,7 @@
     <meta name="generator" content="Ibexa DXP"/>
 </head>
 <body>
+Generated {{ "now"|date("m/d/Y h:   m:s") }} {{ random(1000,9999) }}
 {% block content %}{% endblock %}
 {% block javascripts %}
     {% if encore_entry_exists('react-blocks-js') %}

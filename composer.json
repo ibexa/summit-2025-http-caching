@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "http-interop/http-factory-guzzle": "^1.2",
+        "ibexa/docker": "^4.6",
         "ibexa/experience": "4.6.15",
         "symfony/console": "5.4.*",
         "symfony/dotenv": "5.4.*",

@@ -1,0 +1,27 @@
+version: '3.3'
+# Elastic config, to be appended after base-prod or base-dev, ..., but before selenium.yml
+#
+# NOTE: You'll need to manually run the command: php bin/console ibexa:elasticsearch:put-index-template.
+
+## WARNING!
+# This service is currently work in progress, is not tested by CI, and thus not guaranteed to work.
+# You are however more then welcome to try it out and help make it stable.
+
+services:
+  app:
+    depends_on:
+      - elasticsearch
+    environment:
+      - SEARCH_ENGINE=elasticsearch
+      - ELASTICSEARCH_DSN=elasticsearch:9200
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.18
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+    networks:
+      - frontend
+      - backend

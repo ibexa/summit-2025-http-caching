@@ -54,6 +54,9 @@ parameters:
 
     env(HTTPCACHE_PURGE_TYPE): local # default value to maintain BC
 
+    env(FRONT_HOSTNAME): localhost
+    env(ADMIN_HOSTNAME): admin.localhost
+
 ibexa:
     # HttpCache settings, By default 'local' (Symfony HttpCache Proxy), by setting it to 'varnish' you can point it to Varnish
     http_cache:
@@ -79,7 +82,16 @@ ibexa:
             corporate_group: [corporate]
         default_siteaccess: site
         match:
-            URIElement: 1
+            #URIElement: 1
+            Map\Host:
+                '%env(FRONT_HOSTNAME)%': site
+                '%env(ADMIN_HOSTNAME)%': admin
+#               Ibexa Cloud hostnames
+#                ibexasummit.global.ssl.fastly.net: site
+#                admin-ibexasummit.global.ssl.fastly.net: admin
+#               localhost hostnames
+#                localhost: site
+#                admin.localhost: admin
             # Uncomment if you've enabled SiteFactory
             # '@Ibexa\SiteFactory\SiteAccessMatcher': ~
 

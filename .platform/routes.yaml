@@ -9,3 +9,10 @@
 "https://www.{default}/":
     type: redirect
     to: "https://{default}/"
+
+"https://admin.{default}/":
+    type: upstream
+    upstream: "app:http"
+    cache:
+        enabled: false
+

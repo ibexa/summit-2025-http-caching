@@ -1,0 +1,74 @@
+-   type: reference
+    mode: load
+    filename: references/dashboard_references.yaml
+
+-   type: role
+    mode: create
+    metadata:
+        identifier: 'Dashboard'
+    policies:
+        -
+            module: content
+            function: read
+            limitations:
+                -
+                    identifier: Subtree
+                    values: ['reference:ref__predefined_dashboards_folder__path'] # Predefined dashboards
+        -
+            module: content
+            function: read
+            limitations:
+                -
+                    identifier: Node
+                    values:
+                        - 'reference:ref__dashboard__container_folder__location_id' # Dashboards
+                        - 'reference:ref__user_dashboards_folder__location_id' # Users dashboards
+        -
+            module: content
+            function: read
+            limitations:
+                -
+                    identifier: Subtree
+                    values: ['reference:ref__user_dashboards_folder__path'] # User dashboards
+                -
+                    identifier: Owner
+                    values: [1]
+        -
+            module: content
+            function: versionread
+            limitations:
+                -
+                    identifier: Subtree
+                    values: ['reference:ref__user_dashboards_folder__path'] # User dashboards
+                -
+                    identifier: Owner
+                    values: [1]
+        -
+            module: content
+            function: edit
+            limitations:
+                -
+                    identifier: Subtree
+                    values: ['reference:ref__user_dashboards_folder__path'] # User dashboards
+                -
+                    identifier: Owner
+                    values: [1]
+        -
+            module: content
+            function: publish
+            limitations:
+                -
+                    identifier: Subtree
+                    values: ['reference:ref__user_dashboards_folder__path'] # User dashboards
+                -
+                    identifier: Owner
+                    values: [1]
+        -
+            module: dashboard
+            function: customize
+
+
+    actions:
+        -   action: assign_role_to_user_group
+            value:
+                id: 13

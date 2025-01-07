@@ -1,0 +1,10 @@
+-   type: content_type
+    mode: update
+    match:
+        field: content_type_identifier
+        value: company
+    fields:
+        -   identifier: billing_address
+            type: ibexa_address
+            required: true
+

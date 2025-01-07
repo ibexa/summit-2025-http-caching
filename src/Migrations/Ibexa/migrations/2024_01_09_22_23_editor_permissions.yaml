@@ -1,0 +1,24 @@
+# Allows Editors to access public website
+-   type: role
+    mode: update
+    match:
+        field: identifier
+        value: 'Anonymous'
+    actions:
+        -   action: assign_role_to_user_group
+            value:
+                id: 13 # Editors
+
+# Allow Editors to edit their own profile
+-   type: role
+    mode: create
+    metadata:
+        identifier: 'User Profile Owner'
+    policies:
+        -   module: user
+            function: selfedit
+            limitations: { }
+    actions:
+        -   action: assign_role_to_user_group
+            value:
+                id: 13 # Editors

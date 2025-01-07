@@ -1,0 +1,14 @@
+-   type: content_type
+    mode: update
+    match:
+        field: content_type_identifier
+        value: image
+    fields:
+        -   identifier: tags
+            type: ezkeyword
+            searchable: true
+            translatable: true
+            position: 4
+            translations:
+                eng-GB:
+                    name: Tags

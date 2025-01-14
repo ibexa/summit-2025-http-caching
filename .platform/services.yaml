@@ -77,11 +77,11 @@ rediscache:
 #    disk: 512
 
 # Due to logic in app/config/env/platformsh.php, do not change the service name to something different than 'varnish'
-varnish:
-    type: 'varnish:6.0'
-    relationships:
-        app: "app:http"
-    configuration:
-        vcl: !include
-            type: string
-            path: varnish.vcl
+#varnish:
+#    type: 'varnish:6.0'
+#    relationships:
+#        app: "app:http"
+#    configuration:
+#        vcl: !include
+#            type: string
+#            path: varnish.vcl

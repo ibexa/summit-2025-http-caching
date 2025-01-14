@@ -1,0 +1,16 @@
+{% extends "@ibexadesign/pagelayout.html.twig" %}
+
+{% block content %}
+    <h1>pagewithesi.html.twig</h1>
+Name for content with id 2 = {{ content.name }}<br/>
+
+{{ ibexa_http_cache_tag_location(location) }}
+
+some esis:<br/>
+{{ render_esi(controller('App\\Controller\\CustomController::showCurrentUser')) }}
+{{ render_esi(controller('App\\Controller\\CustomController::showCurrentUser')) }}
+{{ render_esi(controller('App\\Controller\\CustomController::showCurrentUser')) }}
+{{ render_esi(controller('App\\Controller\\CustomController::showCurrentUser')) }}
+{{ render_esi(controller('App\\Controller\\CustomController::showCurrentUser')) }}
+
+{% endblock %}

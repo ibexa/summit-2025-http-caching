@@ -1,0 +1,8 @@
+{% extends "@ibexadesign/pagelayout.html.twig" %}
+
+{% block content %}
+<h1>tagintwig.html.twig</h1>
+Name for content with id 2 = {{ content.name }}<br/>
+
+{{ ibexa_http_cache_tag_location(location) }}
+{% endblock %}

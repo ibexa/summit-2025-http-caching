@@ -4,6 +4,10 @@ framework:
     #csrf_protection: true
     http_method_override: false
 
+    # x-forwarded-host is used by Fastly when using the "Override Host" feature
+    # Accepting this header ensures absolute urls are generated correctly.
+    trusted_headers: ['x-forwarded-host']
+
     # Enables session support. Note that the session will ONLY be started if you read or write from it.
     # Remove or comment this section to explicitly disable session support.
     session:

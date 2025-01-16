@@ -65,9 +65,12 @@ class CustomController extends AbstractController
         $content = $location->getContent();
 
         // Adds tags: c52 ct42 l2
+        $this->responseTagger->tag($content->contentInfo);
         // Adds tags: pl1 p1 p2
+        $this->responseTagger->tag($location);
 
         $response = new Response("Name for content with location id 2 = " . $content->getName());
+        $response->setSharedMaxAge($this->configResolver->getParameter('content.default_ttl'));
 
         return $response;
     }
@@ -153,8 +156,8 @@ class CustomController extends AbstractController
         $this->responseTagger->tag($currentUser->contentInfo);
 
         $response = new Response("Current logged in user : $currentUserName<br/>\n");
-        //$response->setSharedMaxAge($this->configResolver->getParameter('content.default_ttl'));
-        //$response->setVary('Cookie', false);
+        $response->setSharedMaxAge($this->configResolver->getParameter('content.default_ttl'));
+        $response->setVary('Cookie', false);
 
         return $response;
     }
